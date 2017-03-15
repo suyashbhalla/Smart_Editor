@@ -149,7 +149,7 @@ public abstract class Document {
 	/** return the Flesch readability score of this document */
 	public double getFleschScore()
 	{
-	    // TODO: You will play with this method in week 1, and 
+	    // TODO: You will play with this method in week 1, and Hey its very nice 
 		// then implement it in week 2
 		double wordCount = (double)getNumWords();
 		return 206.835 - (1.015 * ((wordCount)/getNumSentences())) 
