@@ -1,5 +1,6 @@
 package document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /** 
@@ -15,9 +16,12 @@ public class EfficientDocument extends Document {
 	private int numSentences;  // The number of sentences in the document
 	private int numSyllables;  // The number of syllables in the document
 	
+	private List<String> wordList;
+	
 	public EfficientDocument(String text)
 	{
 		super(text);
+		wordList=new ArrayList<String>();
 		processText();
 	}
 	
@@ -55,6 +59,7 @@ public class EfficientDocument extends Document {
 		for(String str:tokens){
 			if(isWord(str)){
 				isNewSentence=true;
+				wordList.add(str);
 				numWords++;
 			}else{
 				isNewSentence=false;
@@ -154,6 +159,12 @@ public class EfficientDocument extends Document {
 		testCase(new EfficientDocument("Lorem ipsum dolor sit amet, qui ex choro quodsi moderatius, nam dolores explicari forensibus ad."),
 		         32, 15, 1);
 		
+	}
+
+
+	public List<String> getWordList() {
+		// TODO Auto-generated method stub
+		return wordList;
 	}
 	
 
